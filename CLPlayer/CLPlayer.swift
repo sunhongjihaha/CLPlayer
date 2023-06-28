@@ -344,7 +344,7 @@ private extension CLPlayer {
 
 // MARK: - JmoVxia---Screen
 
-private extension CLPlayer {
+public extension CLPlayer {
     func dismiss() {
         guard contentView.screenState == .fullScreen else { return }
         guard let controller = fullScreenController else { return }
@@ -355,7 +355,9 @@ private extension CLPlayer {
         fullScreenController = nil
         UIViewController.attemptRotationToDeviceOrientation()
     }
+}
 
+private extension CLPlayer {
     func presentWithOrientation(_ orientation: CLAnimationTransitioning.CLAnimationOrientation) {
         guard superview != nil else { return }
         guard fullScreenController == nil else { return }

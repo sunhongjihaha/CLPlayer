@@ -322,7 +322,7 @@ private extension CLPlayer {
         bufferTimer?.cancel()
 
         contentView.playState = .buffering
-        bufferTimer = CLGCDTimer(interval: 0, delaySecs: 3.0, repeats: false, action: { [weak self] _ in
+        bufferTimer = CLGCDTimer(interval: 0, delaySecs: 1.0, repeats: false, action: { [weak self] _ in
             guard let playerItem = self?.playerItem else { return }
             if playerItem.isPlaybackLikelyToKeepUp {
                 self?.play()

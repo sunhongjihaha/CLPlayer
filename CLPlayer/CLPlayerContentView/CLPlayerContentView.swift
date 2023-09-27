@@ -655,7 +655,7 @@ extension CLPlayerContentView {
     }
 
     func setTotalDuration(_ totalDuration: TimeInterval) {
-        let time = Int(ceil(totalDuration))
+        let time = Int(floor(totalDuration))
         let hours = time / 3600
         let minutes = time / 60
         let seconds = time % 60
@@ -663,7 +663,7 @@ extension CLPlayerContentView {
     }
 
     func setCurrentDuration(_ currentDuration: TimeInterval) {
-        let time = Int(ceil(currentDuration))
+        let time = Int(floor(currentDuration))
         let hours = time / 3600
         let minutes = time / 60
         let seconds = time % 60
